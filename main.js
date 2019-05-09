@@ -40,6 +40,8 @@ function update(pred){
 async function zero(){
     //console.log("zero");
     sequence.push(0);
+    var prediction_disp = document.getElementById("last");
+    prediction_disp.textContent=`You typed ${sequence[sequence.length-1]}`;
     if(sequence.length>input_len){
         const out = await makePrediction();
         update(out);
@@ -48,6 +50,8 @@ async function zero(){
 async function one(){
     //console.log("one");
     sequence.push(1);
+    var prediction_disp = document.getElementById("last");
+    prediction_disp.textContent=`You typed ${sequence[sequence.length-1]}`;
     if(sequence.length>input_len){
         const out = await makePrediction();
         update(out);
