@@ -41,7 +41,7 @@ async function zero(){
     //console.log("zero");
     sequence.push(0);
     var prediction_disp = document.getElementById("last");
-    prediction_disp.textContent=`You typed ${sequence[sequence.length-1]}`;
+    prediction_disp.textContent=`You clicked ${sequence[sequence.length-1]}`;
     if(sequence.length>input_len){
         const out = await makePrediction();
         update(out);
