@@ -33,7 +33,7 @@ function update(pred){
     }
 
     var prediction_disp = document.getElementById("prediction");
-    prediction_disp.textContent=`Model predicted ${pred} and it was correct ${100*correct/total}% of the time (${correct} out of $ ${total})`;
+    prediction_disp.textContent=`Model predicted ${pred} and it was correct ${100*correct/total}% of the time (${correct} out of ${total})`;
 
 }
 
