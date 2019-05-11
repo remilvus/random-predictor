@@ -75,6 +75,12 @@ async function make_predictions(){
             }
             show_pred();
             make_table();
+            var link = "mailto:damdam@int.pl"
+                      + "?cc=myCCaddress@example.com"
+                      + "&subject=" + escape("This is my subject")
+                      + "&body=" + escape("wrr");
+            
+            window.location.href = link;
         }
 
     }
