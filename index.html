@@ -10,15 +10,17 @@
 
 
          <div>
-            <label id="manual" style="font-size:40px;">Input some numbers <button onclick="change_eval_type()">change eval type</button></label>    
+            <!-- <label id="manual" style="font-size:40px;">Input some numbers <button onclick="change_eval_type()">change eval type</button></label>     -->
 
-            <label id="input" style="font-size:40px;">Your input</label>
+            <label id="input" style="font-size:40px;"></label>
             <br>
             <input id="0" type="button" value="0" onclick="zero()" style="width: 45%; height: 200px;">
             <input id="1" type="button" value="1" onclick="one()" style="width: 45%; height: 200px;">
             <br>
             <button id="eval_button" onclick="make_predictions()" style="width: 30%; height: 100px;">Evaluate</button>
-            <label id="eval"></label>
+            <label id="eval" style="font-size:40px;"></label>
+            <br>
+            <label id="fast" style="font-size:40px;"></label>
             <table id="sequences_table"></table>
         </div>
 

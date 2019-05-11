@@ -67,20 +67,21 @@ async function make_predictions(){
             show_pred();
             make_table();
         } else {
-            while(evaluated < user_input.length - 1){
-                evaluated += 1;
-                let out = await make_prediction()
-                total += 1;
-                if (user_input[evaluated] == out) correct += 1;
+            let fast_display = document.getElementById("fast");
+            if(user_input.length - evaluated > 50 || evaluated == input_len-1){
+                fast_display.textContent = ''
+                while(evaluated < user_input.length - 1){
+                    evaluated += 1;
+
+                    let out = await make_prediction()
+                    total += 1;
+                    if (user_input[evaluated] == out) correct += 1;
+                }                
+                show_pred();
+                make_table();
+            } else {
+                fast_display.textContent = `You must enter ${50-(user_input.length-evaluated-1)} more numbers before next evaluation`
             }
-            show_pred();
-            make_table();
-            var link = "mailto:damdam@int.pl"
-                      + "?cc=myCCaddress@example.com"
-                      + "&subject=" + escape("This is my subject")
-                      + "&body=" + escape("wrr");
-            
-            window.location.href = link;
         }
 
     }
