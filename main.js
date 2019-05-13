@@ -1,6 +1,6 @@
 const session = new onnx.InferenceSession();
-session.loadModel("./model.onnx");
-const input_len = 10;
+session.loadModel("./new_model.onnx");
+const input_len = 7;
 const showed_input_len = 10;
 
 let evaluated = input_len - 1; //index of last evaluated value
@@ -30,7 +30,7 @@ function show_input(){
     let start = user_input.length-showed_input_len - 1;
     if (start < 0) start = 0;
     input_display.innerHTML = `Your sequence length is ${user_input.length}. <br>
-                                 End of your input: ${user_input.slice(start, user_input.length-1)}`;
+                                 End of your input: ${user_input.slice(start, user_input.length)}`;
 }
 
 function show_pred(){
@@ -68,7 +68,7 @@ async function make_predictions(){
             make_table();
         } else {
             let fast_display = document.getElementById("fast");
-            if(user_input.length - evaluated > 50 || evaluated == input_len-1){
+            if(user_input.length - evaluated > 30 || evaluated == input_len-1){
                 fast_display.textContent = ''
                 while(evaluated < user_input.length - 1){
                     evaluated += 1;
@@ -80,7 +80,7 @@ async function make_predictions(){
                 show_pred();
                 make_table();
             } else {
-                fast_display.textContent = `You must enter ${50-(user_input.length-evaluated-1)} more numbers before next evaluation`
+                fast_display.textContent = `You must enter ${30-(user_input.length-evaluated-1)} more numbers before next evaluation`
             }
         }
 
@@ -88,7 +88,8 @@ async function make_predictions(){
 }
 
 async function make_prediction(){
-    let inputTensor = new onnx.Tensor(user_input.slice(evaluated-input_len, evaluated), 'float32',[1,10]);
+    console.log(user_input.slice(evaluated-input_len, evaluated), 'float32',[1,input_len])
+    let inputTensor = new onnx.Tensor(user_input.slice(evaluated-input_len, evaluated), 'float32',[1,input_len]);
     const outputMap = await session.run([inputTensor]);
     let output = outputMap.values().next().value.data;
     output = output.indexOf(Math.max(...output));
