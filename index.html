@@ -10,12 +10,14 @@
 
 
          <div>
-            <p>Input a sequence of zeroes and ones and try to make in random. Neural network will try to predict your next input (it will do it for the whole sequence or after every input - change it with "change eval type" button).
+            <p>Input a sequence of zeroes and ones and try to make in random. Neural network will try to predict your next input (it will do it 
+               on the whole sequence all once or after every input - you can change it with "change eval type" button).
                <br>
-               This model will work only if you are trying to be random, so don't use model predictions to change your inputs. Model corectness level can vary when your sequence is short, but after you input more than ~100 numbers it should be greater than 50% (better than random guessing)
+               This model will work only if you are trying to be random, so don't use model predictions when deciding what to input next. Model corectness level can vary when your sequence is short, but after you input more than ~100 numbers it should be greater than 50% (better than random guessing)
             </p>
-            <label id="manual" style="font-size:40px;">Input some numbers <button onclick="change_eval_type()">change eval type</button></label>    
-
+            <br>
+            <button onclick="change_eval_type()">change eval type</button>    
+            <br>
             <label id="input" style="font-size:40px;"></label>
             <br>
             <input id="0" type="button" value="0" onclick="zero()" style="width: 45%; height: 200px;">
