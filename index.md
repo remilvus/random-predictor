@@ -1,7 +1,5 @@
     ##markdown
 
-<script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
-<script src="main.js"></script>
 
 
 
