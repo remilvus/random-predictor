@@ -1,7 +1,7 @@
 <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
 <script src="main.js"></script>
 
-<p  style="font-size:10px;">Input a sequence of zeroes and ones and try to make in random. Neural network will try to predict your                                  next input (it will do it 
+<p  style="font-size:20px;">Input a sequence of zeroes and ones and try to make in random. Neural network will try to predict your                                  next input (it will do it 
                              on the whole sequence at once or after every input - you can change it with "change eval type" button).
                              <br>
                              This model will work only if you are trying to be random, so don't use model predictions when deciding  what to input next. Model corectness level can vary when your sequence is short, but after you input more than ~100 numbers it should be greater than 50% (better than random guessing)
