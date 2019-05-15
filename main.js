@@ -11,6 +11,11 @@ let correct = 0;
 let total = 0;
 let isEvaluating = false; //is true when evaluating after every user input
 
+window.addEventListener("keydown", function(event) {
+    if(event.key==0) zero();
+    if(event.key==1) one(); 
+  }, true);
+
 function zero(){
     user_input.push(0);
     if(isEvaluating)
