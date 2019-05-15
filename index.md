@@ -1,9 +1,3 @@
-
-
-
-
-
-<html>
     <head>
         <title>model</title>
     </head>
@@ -41,5 +35,3 @@
         
 
     </body>
-</html>
-
