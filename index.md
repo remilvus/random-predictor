@@ -1,37 +1,45 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/remilvus/random-prediction/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+<html>
+    <head>
+        <title>model</title>
+    </head>
+    <body>
+        <!-- Load ONNX.js -->
+        <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
+        <script src="main.js"></script>
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+         <div>
+            <p  style="font-size:20px;"">Input a sequence of zeroes and ones and try to make in random. Neural network will try to predict your next input (it will do it 
+               on the whole sequence at once or after every input - you can change it with "change eval type" button).
+               <br>
+               This model will work only if you are trying to be random, so don't use model predictions when deciding what to input next. Model corectness level can vary when your sequence is short, but after you input more than ~100 numbers it should be greater than 50% (better than random guessing)
+               <br>
+               Buttons on mobile are slow so don't click too fast.
+               <br>
+               You can use your keyboard to input.
+            </p>
+            <br>
+            <button onclick="change_eval_type()">change eval type</button>    
+            <br>
+            <p id="input" style="font-size:40px;"></p>
+            <br>
+            <input id="0" type="button" value="0" onclick="zero()" style="width: 45%; height: 200px;">
+            <input id="1" type="button" value="1" onclick="one()" style="width: 45%; height: 200px;">
+            <br>
+            <button id="eval_button" onclick="make_predictions()" style="width: 30%; height: 100px;">Evaluate</button>
+            <p id="eval" style="font-size:40px;"></p>
+            <br>
+            <p id="fast" style="font-size:40px;"></p>
+            <table id="sequences_table"></table>
+        </div>
 
-1. Numbered
-2. List
+        
 
-**Bold** and _Italic_ and `Code` text
+    </body>
+</html>
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/remilvus/random-prediction/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
